@@ -17,5 +17,5 @@ output "lambda_arns" {
 }
 
 output "lambda2_arn" {
-  value = module.lambda_us_east_2.lambda2_arn  # Only in us-east-2
+  value = module.lambda_us_east_2.lambda2_arn # Only in us-east-2
 }

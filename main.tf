@@ -15,10 +15,10 @@ provider "aws" {
 
 # IAM Role for Lambda (uses default provider)
 module "iam" {
-  source          = "./modules/iam"
-  role_name       = var.lambda_role_name
-  project_name    = var.project_name
-  policy_json     = file("${path.module}/policies/lambda_policy.json")
+  source       = "./modules/iam"
+  role_name    = var.lambda_role_name
+  project_name = var.project_name
+  policy_json  = file("${path.module}/policies/lambda_policy.json")
 }
 
 # SNS Topics in multiple regions
@@ -49,7 +49,7 @@ module "lambda_us_east_2" {
   lambda_config   = var.lambda_config
   tag_key         = var.tag_key
   tag_value       = var.tag_value
-  single_region   = false  # Deploy both Lambdas
+  single_region   = false # Deploy both Lambdas
   providers = {
     aws = aws.us-east-2
   }
@@ -63,7 +63,7 @@ module "lambda_us_west_2" {
   lambda_config   = var.lambda_config
   tag_key         = var.tag_key
   tag_value       = var.tag_value
-  single_region   = true  # Deploy only Lambda 1, skip Lambda 2
+  single_region   = true # Deploy only Lambda 1, skip Lambda 2
   providers = {
     aws = aws.us-west-2
   }
