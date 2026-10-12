@@ -1,0 +1,7 @@
+# Copy to terraform.tfvars (git-ignored) and adjust.
+email_endpoint = "alerts@example.com"   # required: SNS alert recipient
+
+# Optional overrides
+# project_name = "my_IOPS_project"
+# tag_key      = "env"
+# tag_value    = "k8s"
